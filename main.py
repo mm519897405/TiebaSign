@@ -206,8 +206,7 @@ def send_email(sign_list):
     msg = MIMEText(body, 'html', 'utf-8')
     msg['subject'] = subject
     smtp = smtplib.SMTP()
-    logger.error("HOST=%s",HOST)
-    smtp.connect(HOST)
+    smtp.connect('smtp.qq.com')
     smtp.login(FROM, AUTH)
     smtp.sendmail(FROM, TO, msg.as_string())
     smtp.quit()
